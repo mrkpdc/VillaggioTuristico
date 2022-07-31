@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Camere";
+}
+@using Microsoft.AspNetCore.Identity
+@using VillaggioTuristico.Entities
+
+@inject VillaggioTuristico.DB.UserDBContext userDBContext
+
+@model VillaggioTuristico.Models.UsersAndRolesViewModel
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!----Cover----->
+<section class="cover_camere">
+    <div class="cover_filter"></div>
+    <div class="cover_caption">
+        <div class="cover_caption_copy">
+            <h2>"Anche un viaggio di mille miglia comincia con un passo.."</h2>
+        </div>
+    </div>
+</section>
+
+<!----Cards----->
+<section class="cards clearfix">
+    <div class="card_camere" data-bs-toggle="modal" data-bs-target="#myModal">
+        <img class="card_image" src="../images/mk-s-RD6QavJg2Ek-unsplash.jpg" alt="Doppia">
+        <div class="card_copy">
+            <h3>Camera doppia</h3>
+            <p>A partire da 80€ a notte</p>
+            <p>23 metri quadrati, 2 posti letto, terrazza privata</p>
+        </div>
+    </div>
+
+    <div class="card_camere" data-bs-toggle="modal" data-bs-target="#Aggiungi">
+        <img class="card_image" src="../images/szasa-amanda-esQgNftoyW8-unsplash.jpg" alt="Tripla">
+        <div class="card_copy">
+            <h3>Camera tripla</h3>
+            <p>A partire da 110€ a notte</p>
+            <p>27 metri quadri, 3 posti letto, idromassaggio nell’ampio giardino panoramico</p>
+        </div>
+    </div>
+
+    <div class="card_camere" data-bs-toggle="modal" data-bs-target="#Aggiungi">
+        <img class="card_image" src="../images/jonathan-mueller-meY-MPjJk0k-unsplash.jpg" alt="Quadrupla">
+        <div class="card_copy">
+            <h3>Camera quadrupla</h3>
+            <p>A partire da 130€ a notte</p>
+            <p>35 metri quadri, 4 posti letto, patio e giardino privato con solarium</p>
+        </div>
+    </div>
+</section>
+
+<!----Banner----->
+<section class="banner clearfix">
+    <div class="banner_image_camere_1"></div>
+    <div class="banner_copy">
+        <div class="banner_copy_text">
+            <h3>Suite Poggio Del Mare</h3>
+            <p>A partire da 170€ a notte</p>
+            <p>Ambienti eleganti ed accoglienti, dotati di ogni comodità, avvolti dalla vegetazione mediterranea e affacciati su un panorama marittimo sorprendente. </p>
+        </div>
+    </div>
+</section>
+
+<section class="banner clearfix">
+    <div class="banner_copy">
+        <div class="banner_copy_text">
+            <h3>Team Building & Location Charme</h3>
+            <p>Abbiamo unito le forze con Space Work, azienda leader nell’ambito dello sviluppo delle risorse umane e delle loro competenze, per proporre alle aziende interessate un’esperienza che unisca all’alta qualità del training l’incentive di un ambiente unico ed esclusivo.</p>
+        </div>
+    </div>
+    <div class="banner_image_camere_2"></div>
+</section>
+
+
+<section class="banner clearfix">
+    <div class="banner_image_camere_3"></div>
+    <div class="banner_copy">
+        <div class="banner_copy_text">
+            <h3>Weekend Benessere a Framura</h3>
+            <p>Abbiamo preparato per voi un weekend di relax e benessere nella pace di Sesta Terra Natural Resort. Godetevi un lento risveglio fra cielo, mare e silenzio, abbandonatevi al piacere della nostra area benessere per concludere la giornata con una cena gourmet sulla nostra terrazza affacciata sul golfo di Framura.</p>
+        </div>
+    </div>
+</section>

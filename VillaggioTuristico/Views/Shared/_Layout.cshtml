@@ -1,0 +1,155 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using VillaggioTuristico.Entities
+@inject UserManager<User> UserManager
+@inject SignInManager<User> SignInManager
+
+@inject VillaggioTuristico.DB.UserDBContext userDBContext
+
+@model VillaggioTuristico.Models.UsersAndRolesViewModel
+@inject RoleManager<IdentityRole> RoleManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VillaggioTuristico</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    @*<navbar>*@
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    @*Home*@
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+
+                    @*Camere*@
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Camere">Camere</a>
+                    </li>
+
+                    @*Prenotazione*@
+                    @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Prenotazione">Prenotazione</a>
+                        </li>
+                    }
+                </ul>
+
+                @*Create User button*@
+                @if (!SignInManager.IsSignedIn(User))
+                {
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#CreateUserModal">
+                        Registrati
+                    </button>
+                }
+
+                @*Create User modal*@
+                <div class="modal fade" id="CreateUserModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            @*Modal header*@
+                            <div class="modal-header">
+                                <h4 class="modal-title">Registrati</h4>
+                            </div>
+
+                            @*Modal body*@
+                            <div class="modal-body bg-light border border-secondary rounded m-3" id="CreateUserModalBody">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="InputUserName" class="form-label">UserName</label>
+                                        <input type="text" class="form-control" id="InputUserName">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="InputEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="InputEmail">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="InputPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="InputPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="InputConfirmPassword" class="form-label">Conferma password</label>
+                                        <input type="password" class="form-control" id="InputConfirmPassword">
+                                    </div>
+                                </form>
+                                <div id="CreateUserModalResult">
+                                    @*popolato da JavaScript*@
+                                </div>
+                            </div>
+
+                            @*Modal footer*@
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" onclick="ajaxCallCreateUser('@Url.Action("CreateUser", "Home")')">Registrati</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*Login*@
+                @if (!SignInManager.IsSignedIn(User))
+                {
+                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                }
+
+                @*Nome utente loggato a destra, cliccabile per UserPage*@
+                @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
+                {
+                    <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="UserPage">@UserManager.GetUserName(User)</a>
+
+                }
+
+                @*Admin loggato a destra, cliccabile per AdminPage*@
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <a class="nav-link text-primary" asp-area="" asp-controller="Home" asp-action="AdminPage">@UserManager.GetUserName(User)</a>
+
+                }
+
+                @*Logout*@
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                }
+
+            </div>
+        </nav>
+    </header>
+    @*</navbar>*@
+
+    @*main content*@
+    <div class="container-fluid" style="padding:0px">
+        <main role="main" class="pb-3 d-flex flex-column min-vh-100">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*footer*@
+    <footer class="border-top bg-dark text-light mt-auto p-4">
+        <div class="container">
+            &copy; 2022 - VillaggioTuristico - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/admin.js" asp-append-version="true"></script>
+    <script src="~/js/user.js" asp-append-version="true"></script>
+    <script src="~/js/prenotazione.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

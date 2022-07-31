@@ -1,0 +1,438 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+/*.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;*/ /* Vertically center the text there */
+/*}*/
+
+
+
+/*---------general----------*/
+/*---------inizio----------*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.button {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 8px 8px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+p {
+    line-height: 22px;
+}
+
+a {
+    color: #005050;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkcyan;
+}
+
+/*---------header----------*/
+
+.header {
+    background-color: #333;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+.header_nome {
+    color: #fff;
+    float: left;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.header_menu {
+    float: right;
+    margin: 0%;
+    padding: 0%;
+}
+
+.header_menu-item {
+    display: inline-block;
+}
+
+.header_menu-item a {
+    color: #fff;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    border: 1px solid #333;
+}
+
+.header_menu-item a:hover {
+    color: darkcyan;
+}
+
+.header_menu-item-current {
+    color: darkcyan;
+    padding: 20px;
+}
+
+
+/*---------cover----------*/
+.cover_index {
+    width: 100%;
+    height: 500px;
+    background-image: url(../images/xhulio-selenica-dfHKE1Gxaw0-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+
+.cover_camere {
+    width: 100%;
+    height: 500px;
+    background-image: url(../images/sidekix-media-jXg86doR9no-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.cover_prenotazione {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/joel-lee-fZXQy7Gw-jU-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.cover_login {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/spacejoy-YnLJ3rM4VtI-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.cover_user {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/mk-s-XaFEE8t2pKg-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.cover_admin {
+    width: 100%;
+    height: auto;
+    background-image: url(../images/paul-menz-yhB5EM_OkGw-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+
+
+
+
+
+.cover_home {
+    height: 70%;
+    background-image: url(../images/home/ricardo-gomez-angel-dEtMGTcgytU-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.cover_filter {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.2;
+}
+
+.cover_caption {
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.cover_caption_copy {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+
+.cover_caption_copy h1 {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 100px;
+    font-style: italic;
+}
+
+.cover_caption_copy h2 {
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    font-size: 30px;
+    margin-top: -10px;
+    font-style: italic;
+}
+
+
+/*---------cards---------*/
+.cards {
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.card {
+    width: 30%;
+    margin: 0 1.5%;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    height: 700px;
+}
+
+
+.card_camere {
+    width: 30%;
+    margin: 0 1.5%;
+    background-color: rgb(255, 255, 255);
+    float: left;
+    height: 550px;
+}
+
+.card_image {
+    width: 100%;
+    height: 400px;
+}
+
+.card_copy {
+    padding: 5px 20px;
+}
+
+.card_copy h3 {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-size: 18px;
+}
+
+.card_copy p {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-size: 15px;
+}
+
+/*---------banner--------*/
+.banner {
+    background: #fff;
+    height: 200px;
+    margin-top: 20px;
+
+}
+
+
+.banner_image_index_1 {
+    width: 30%;
+    float: left;
+    height: 100%;
+    background-image: url(../images/siddharth-shah-7kr71wjlYRQ-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    z-index: 10;
+}
+
+.banner_image_index_2 {
+    width: 30%;
+    float: left;
+    height: 100%;
+    background-image: url(../images/stephen-leonardi-0CmzBbw5OCQ-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.banner_image_camere_1 {
+    width: 30%;
+    float: left;
+    height: 100%;
+    background-image: url(../images/sidekix-media-2dToycYRNwY-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    z-index: 10;
+}
+
+
+.banner_image_camere_2 {
+    width: 30%;
+    float: left;
+    height: 100%;
+    background-image: url(../images/lianhao-qu-wW5mTigVQPI-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.banner_image_camere_3 {
+    width: 30%;
+    float: left;
+    height: 100%;
+    background-image: url(../images/mathilde-langevin--a9UfepydQA-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.banner_copy {
+    width: 70%;
+    float: left;
+    height: 100%;
+    display: table;
+}
+
+.banner_copy_text {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 30px;
+}
+
+.banner_copy_text h3 {
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.banner_copy_text p {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+/*---------single--------*/
+.single {
+}
+
+.single_copy {
+    max-width: 800px;
+    margin: 0px auto;
+    margin-top: -40px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.single_copy h2 {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.single_copy p {
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+
+/*---------Copiright----------*/
+/*.footer {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    margin-top: 20px;
+}*/
+
+/*---------clearfix----------*/
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+/* IE6 */
+*:first-child + html .clearfix {
+    zoom: 1;
+}
+/* IE7 */

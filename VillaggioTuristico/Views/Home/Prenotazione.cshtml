@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Prenotazione";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model LoginModel
+@using Microsoft.AspNetCore.Identity
+@using VillaggioTuristico.Entities
+@inject SignInManager<User> SignInManager
+
+<section class="cover_prenotazione">
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-6 p-3 m-3 bg-light border border-secondary rounded shadow">
+            <h1 class="text-center">Prenotazione</h1>
+            <form style="text-align:center">
+                <div class="form-group">
+
+                    <label>Seleziona tipo di camera:</label>
+                    <select class="form-control" name="tipologia" id="tipologiaCamera"></select><br/>
+                </div>
+                <input type="submit" class="btn btn-success btn-lg" onclick="inserisciPrenotazione()" value="Prenota" />
+            </form>
+        </div>
+    </div>
+</div>
+</section>

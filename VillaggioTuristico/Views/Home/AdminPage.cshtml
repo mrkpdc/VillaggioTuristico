@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Area riservata amministratore";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 p-3 text-center">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+        <div class="col-sm-12 p-3 text-center">
+            <button class="btn btn-primary btn-lg" id="prenotazioniAdmin" onclick="prenotazioniAdmin()">Stampa prenotazioni</button>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-6">
+            <div class="table-responsive">
+                <table class="table table-light table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Utente</th>
+                            <th>Tipologia</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaPrenotazioni">
+                        @*popolato da JavaScript*@
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

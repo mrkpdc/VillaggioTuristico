@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Users";
+}
+@using Microsoft.AspNetCore.Identity
+@using VillaggioTuristico.Entities
+
+@inject VillaggioTuristico.DB.UserDBContext userDBContext
+
+@model VillaggioTuristico.Models.UsersAndRolesViewModel
+
+<!-- Cover -->
+<section class="cover_index">
+    <div class="cover_filter"></div>
+    <div class="cover_caption">
+        <div class="cover_caption_copy">
+            <h1>Wild Village</h1>
+            <h2>"Vivi la vita che hai immaginato."</h2>
+        </div>
+    </div>
+</section>
+
+<!-- Cards -->
+<section class="cards clearfix">
+
+    <div class="card" data-bs-toggle="modal" data-bs-target="#myModal">
+        <img class="card_image" src="images/tim-woolliscroft-T7nGkdpGdzk-unsplash.jpg" alt="Treno">
+        <div class="card_copy">
+            <a href="https://viaggi.corriere.it/itinerari-e-luoghi/viaggi-in-treno-lusso-panoramici-storici/"><h3>Orient Express</h3></a>
+            <p>Il mito ha viaggiato sui binari dal 1883 al 1977: il “vero” Orient Express è stato il ponte ferroviario tra due mondi, l’Europa e l’Asia. Da Londra/Parigi a Costantinopoli, poi Istanbul, questo treno leggendario non ha trasportato solo passeggeri. Ma anche i sogni dell’immaginario collettivo, il fascino ottocentesco dell’esotismo in Europa e tante ispirazioni letterarie e cinematografiche.</p>
+        </div>
+    </div>
+
+
+    <div class="card" data-bs-toggle="modal" data-bs-target="#Aggiungi">
+        <img class="card_image" src="images/shamoil-1tIyrx0hzJo-unsplash.jpg" alt="Cattedrale">
+        <div class="card_copy">
+            <a href="https://www.ilmonferrato.it/notizia/D1CVUut4PEGW-e23_uMeEA/viaggio-nel-mistero-delle-cattedrali"><h3>Viaggio nel mistero delle cattedrali</h3></a>
+            <p> La Sezione di Casale Monferrato dell'Associazione Archeosofica organizza quattro incontri a partire dal 21 febbraio, che si terranno in via Paleologi, 24. Quattro incontri per lasciarsi incantare dalle suggestive architetture gotiche delle più famose e affascinanti Cattedrali e Basiliche francesi e per poterle visitarle grazie ad un viaggio.</p>
+        </div>
+    </div>
+
+    <div class="card" data-bs-toggle="modal" data-bs-target="#Aggiungi">
+        <img class="card_image" src="images/thomas-tucker-QsiuD0w95h0-unsplash.jpg" alt="Safari">
+        <div class="card_copy">
+            <a href="https://www.raftingtara.com/it/4x4-jeep-safari.html"><h3>4x4 Jeep Safari</h3></a>
+            <p>Grazie alla perfetta posizione tra due parchi nazionali - Durmitor e Sutjeska e le immediate vicinanze dell'unica foresta pluviale d'Europa - Perucica, i massicci montuosi più grandi della regione, numerosi canyon incontaminati, laghi glaciali, natura incontaminata, ecc., Il Rafting Centro Drina Tara offre molto popolare 4x4 Safari in jeep.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Banner -->
+<section class="banner clearfix">
+    <div class="banner_image_index_1"></div>
+    <div class="banner_copy">
+        <div class="banner_copy_text">
+            <a href="https://www.visitdubai.com/it/places-to-visit/balloon-adventures-emirates"><h3>Balloon Adventures</h3></a>
+            <p>Sorvolate le dune del Deserto Arabico con un giro in mongolfiera di Balloon Adventures Emirates. Balloon Adventures propone un'esperienza aerea unica al mondo in cui i passeggeri possono condividere i cieli (e la mongolfiera) con i falchi. Scegliete uno dei numerosi pacchetti a disposizione e trasformatelo in un appuntamento romantico, una celebrazione aziendale o un'indimenticabile giornata di divertimento in famiglia.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Cards -->
+<section class="cards clearfix">
+    <div class="card">
+        <img class="card_image" src="images/woody-kelly-lqi5rhwde5o-unsplash.jpg" alt="Aurora boreale">
+        <div class="card_copy">
+            <a href="https://nordictravels.eu/it/activities/hunting-northern-lights-with-lappish-barbecue/"><h3>A caccia di aurora boreale e barbecue</h3></a>
+            <p>Andate a caccia dell’aurora boreale in mezzo alla natura incontaminata, fuggendo dall’inquinamento luminoso della città. Assaggiate un barbecue tradizionale lappone e scaldatevi al fuoco mentre aspettate le magiche luci. La Lapponia finlandese, uno dei posti ideali per avvistare l'aurora boreale, ti permetterà di ammirare le magiche luci circondate da una straordinaria vista sulla natura scintillante coperta di neve!</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card_image" src="images/thomas-bormans-jOkTZbRX1m0-unsplash.jpg" alt="Centro storico">
+        <div class="card_copy">
+            <a href="https://www.visitgenoa.it/tour-alla-scoperta-del-centro-storico"><h3>Tour alla scoperta del Centro Storico</h3></a>
+            <p>Il progetto, a cui hanno lavorato insieme Comune di Genova e Soprintendenza in collaborazione con il Municipio I Centro Est, consiste in quattro itinerari pedonali contrassegnati da diversi colori, pensati per aiutare turisti e residenti a (ri)scoprire la Suberba e il suo centro storico in maniera chiara e piacevole, in totale sicurezza e senza mai perdere l’orientamento.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card_image" src="images/julian-AfWViYiG-qw-unsplash.jpg" alt="Darsena">
+        <div class="card_copy">
+            <a href="https://www.naviglilive.it/battello-sui-navigli-di-milano/"><h3>Tour della Darsena</h3></a>
+            <p>
+                Con partenza dall’Alzaia del Naviglio Grande, il battello del tour della Darsena tocca i punti salienti della storia del canale.
+                Prima tappa il Vicolo dei Lavandai, affascinante scorcio della Milano scomparsa che sembra incapsulato nel tempo. Questo antico lavatoio è stato attivo fino agli anni ‘50 ed è rimasto quasi completamente intatto.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Banner -->
+<section class="banner clearfix">
+    <div class="banner_copy">
+        <div class="banner_copy_text">
+            <a href="https://accademiadellestelle.org/eventi-astronomia/"><h3>Notte stellare</h3></a>
+            <p>L’Accademia delle Stelle organizza moltissimi eventi astronomici, come serate-evento di osservazioni pubbliche al telescopio, vacanze astronomiche, partecipazione a feste di scuole, quartieri e paesi in tutta Italia, eccetera. In questa pagina trovate alcune delle attività svolte dall’Accademia o in programma per il futuro.</p>
+        </div>
+    </div>
+    <div class="banner_image_index_2"></div>
+</section>
+
+
