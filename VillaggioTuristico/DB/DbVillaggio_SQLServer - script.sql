@@ -1,4 +1,4 @@
-﻿/* la password dell'utente admin e di tutti gli altri utenti è Password01! */
+--la password dell'utente admin e di tutti gli altri utenti è Password01!
 
 USE [master]
 GO
